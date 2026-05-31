@@ -1,0 +1,227 @@
+/* ── TopBar Shell ─────────────────────────────────────────── */
+.topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  background: transparent;
+  border: none;
+  padding: 10px 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 10;
+}
+
+/* ── HUD Controls (left column) ───────────────────────────── */
+.hud-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hud-badge {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: #000;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.hud-badge span {
+  color: #555;
+  font-size: 12px;
+  font-weight: 400;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* ── Circular Button (pause / arrow icons) ────────────────── */
+.circular-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #111;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.circular-btn:hover {
+  background: #333;
+}
+
+/* ── Status Group (center pill) ───────────────────────────── */
+.status-group {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+
+  background: rgba(15, 20, 30, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 20px 30px;
+  border-radius: 0 0 20px 20px; 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  white-space: nowrap;
+}
+
+.status-group div {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* green dot accent for Okay statuses */
+.status-group div::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  margin-left: 2px;
+}
+.status-group span {
+  color: #555;
+  font-size: 12px;
+  font-weight: 400;
+  animation: pulse 2s infinite;
+}
+
+/* battery & signal icons don't need dot */
+.status-group div:first-child::after,
+.status-group div:nth-child(2)::after {
+  display: none;
+}
+
+/* ── Actions (right side) ─────────────────────────────────── */
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  margin-left: auto;
+}
+
+/* MODE / AUTO / MANUAL row */
+.mode-group {
+  background: rgb(255, 255, 255);
+  color: #000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  gap: 4px;
+}
+
+.mode-label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+
+.mode-btn {
+  padding: 6px 16px;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.mode-btn.inactive {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.mode-btn.inactive:hover {
+  color: #fff;
+}
+
+/* INITIATE pill */
+.init-btn {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #000000;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease;
+}
+
+.init-btn:hover {
+  background: rgba(30, 40, 60, 0.95);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .status-group {
+    gap: 12px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-wrap: wrap;
+    padding: 8px;
+  }
+
+  .status-group {
+    position: static;
+    transform: none;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .actions {
+    margin-left: 0;
+  }
+}
