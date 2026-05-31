@@ -1,32 +1,49 @@
 # Insight.IO Dashboard
 
-A React-based implementation of the Insight.IO robotics dashboard as part of the ERIC Robotics Frontend Assignment.
+A React-based implementation of the Insight.IO robotics dashboard developed as part of the ERIC Robotics Frontend Assignment.
+
+---
 
 ## Overview
 
-This project recreates the Insight.IO dashboard interface shown in the assignment demo. The dashboard is designed to provide operators with a unified view of robot status, camera feeds, and mapping data through a clean and responsive user interface.
+This project recreates the Insight.IO dashboard interface shown in the assignment demo. The dashboard provides operators with a centralized interface for monitoring robot status, visualizing mapping data, and viewing camera feeds.
 
-The application is being built using React and Vite, with a focus on component-based architecture, maintainability, and performance.
+The implementation focuses on responsive design, component-based architecture, maintainability, and smooth user interaction.
+
+---
 
 ## Features
 
-### Current Progress
-
-* React + Vite project setup completed
-* Project structure initialized
-* Dashboard component architecture planned
-* Local development environment configured
-
-### Planned Features
+### Dashboard UI
 
 * Responsive dashboard layout
-* Navigation sidebar
-* Mission status and system health indicators
-* Camera feed panel
-* Interactive 3D map visualization
-* View switching between camera and map
-* Emergency controls and operator actions
-* Modern UI matching the provided design reference
+* Sidebar navigation panel
+* Mission status display
+* System health indicators
+* AUTO/MANUAL control section
+* Emergency control interface
+
+### Camera View
+
+* Video-based camera feed visualization
+* Main view and preview mode support
+* Responsive video rendering
+
+### 3D Map Visualization
+
+* Interactive 3D visualization using Three.js
+* Point cloud (.pcd) support
+* Orbit controls for navigation
+* Expandable architecture for future ROS integration
+
+### User Interaction
+
+* Swap between Camera View and Map View
+* Responsive controls
+* Modern dashboard styling
+* Smooth UI transitions
+
+---
 
 ## Tech Stack
 
@@ -37,81 +54,214 @@ The application is being built using React and Vite, with a focus on component-b
 * JavaScript (ES6+)
 * CSS3
 
-### Visualization (Planned)
+### 3D Visualization
 
 * Three.js
 * React Three Fiber
+* React Three Drei
 * PCDLoader
 
-### Robotics Integration (Optional / Bonus)
+### Development Tools
 
-* ROSLib.js
-* ROS2 Web Bridge
+* Git
+* GitHub
+* npm
+
+---
 
 ## Project Structure
 
 ```text
 src/
 │
+├── assets/
+│   ├── demo.mp4
+│
 ├── components/
-│   ├── Sidebar/
-│   ├── TopBar/
-│   ├── CameraView/
-│   ├── MapView/
-│   └── Controls/
+│   ├── Sidebar.jsx
+│   ├── TopBar.jsx
+│   ├── CameraView.jsx
+│   ├── MapView.jsx
+│   ├── PointCloudViewer.jsx
 │
 ├── pages/
-│   └── Dashboard/
-│
-├── assets/
-│
-├── styles/
+│   └── Dashboard.jsx
 │
 ├── App.jsx
-└── main.jsx
+├── main.jsx
+│
+public/
+└── sample.pcd
 ```
 
-## Getting Started
+---
+
+## Installation
 
 ### Prerequisites
 
-* Node.js (v18 or higher recommended)
+* Node.js (18+ recommended)
 * npm
 
-## Design Goals
+Verify installation:
 
-* Match the provided dashboard reference as closely as possible
-* Maintain a clean and modular codebase
-* Ensure responsive behavior across screen sizes
-* Keep components reusable and easy to extend
-* Support future ROS2 integration
+```bash
+node -v
+npm -v
+```
 
-## Development Approach
+---
 
-The project follows a component-driven architecture where each major dashboard section is developed as an independent and reusable React component. This approach improves maintainability, readability, and scalability.
+## Setup
 
-The implementation is divided into phases:
+Clone the repository:
 
-1. Core dashboard layout
-2. Navigation and status components
-3. Camera feed integration
-4. 3D map visualization
-5. Interaction and control systems
-6. UI refinement and responsiveness
+```bash
+git clone https://github.com/vaibhaviiratkar/eric_assignment.git
+```
 
-## Future Enhancements
+Navigate to the project folder:
 
-* Live ROS2 integration
-* Real-time telemetry updates
-* Multiple camera feeds
-* Mission history and analytics
-* Advanced map controls
-* Point cloud streaming support
+```bash
+cd eric_assignment
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+---
+
+## Running the Application
+
+Start the local development server:
+
+```bash
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+The application runs entirely on a local development server provided by Vite.
+
+---
+
+## Production Build
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+---
+
+## Architecture & Design Decisions
+
+### React Component Architecture
+
+The dashboard is organized into reusable React components to improve maintainability and scalability.
+
+Major UI sections such as:
+
+* Sidebar
+* Top Navigation
+* Camera View
+* Map View
+* Control Panel
+
+are implemented as independent components.
+
+### State Management
+
+React state is used to manage dashboard interactions, including:
+
+* Active view selection
+* Camera/Map swapping
+* UI state updates
+
+### 3D Visualization
+
+Three.js and React Three Fiber were selected to provide an efficient and extensible solution for rendering point cloud data in the browser.
+
+This approach enables future integration with:
+
+* ROS2
+* ROSBridge
+* ROSLib.js
+* Live robot telemetry
+
+without significant architectural changes.
+
+---
+
+## Self Hosting
+
+The application is self-hosted locally using Vite's development server.
+
+To run the project:
+
+```bash
+npm install
+npm run dev
+```
+
+No external hosting platform is required.
+
+---
+
+## Future Improvements
+
+Given additional development time, the following enhancements could be implemented:
+
+* ROS2 integration using ROSLib.js
+* Live robot telemetry streaming
+* Real-time camera feeds
+* Dynamic mission management
+* Advanced point cloud controls
+* Authentication and user roles
+* Historical mission analytics
+
+---
+
+## Screenshots and video 
+
+screen shot and video are in demo folder.
+
 
 ## Assignment Information
 
-This project is being developed as part of the ERIC Robotics technical assessment assignment.
+This project was developed as part of the ERIC Robotics technical assessment assignment.
+
+The objective was to recreate the Insight.IO dashboard interface while maintaining a clean, modular, and scalable codebase.
+
+---
 
 ## Author
 
 Vaibhavi Iratkar
+
+Full Stack Developer
+
+Technologies:
+
+* React
+* JavaScript
+* Python
+* Django
+* HTML
+* CSS
+* SQL
+
