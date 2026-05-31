@@ -1,0 +1,28 @@
+.emergency-btn {
+  width: 180px;
+  height: 70px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #e74c3c;
+  color: white;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 0 15px rgba(231, 76, 60, 0.3);
+}
+
+.emergency-btn:hover {
+  background: #ff5b4d;
+  transform: translateY(-2px);
+}
+
+.emergency-btn:active {
+  transform: scale(0.98);
+}

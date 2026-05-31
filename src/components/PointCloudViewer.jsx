@@ -5,7 +5,7 @@ import { PCDLoader } from "three/examples/jsm/loaders/PCDLoader.js";
 function PointCloud() {
   const pcd = useLoader(
     PCDLoader,
-    "/milk.pcd"
+    "/office1.pcd"
   );
 
   return <primitive object={pcd} />;
