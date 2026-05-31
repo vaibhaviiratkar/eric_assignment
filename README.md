@@ -252,16 +252,5 @@ The objective was to recreate the Insight.IO dashboard interface while maintaini
 ## Author
 
 Vaibhavi Iratkar
-
-Full Stack Developer
-
-Technologies:
-
-* React
-* JavaScript
-* Python
-* Django
-* HTML
-* CSS
-* SQL
-
+mob no: 7558751744
+email: vaibhaviiratkar@gmail.com
