@@ -1,16 +1,117 @@
-# React + Vite
+# Insight.IO Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based implementation of the Insight.IO robotics dashboard as part of the ERIC Robotics Frontend Assignment.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project recreates the Insight.IO dashboard interface shown in the assignment demo. The dashboard is designed to provide operators with a unified view of robot status, camera feeds, and mapping data through a clean and responsive user interface.
 
-## React Compiler
+The application is being built using React and Vite, with a focus on component-based architecture, maintainability, and performance.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+### Current Progress
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React + Vite project setup completed
+* Project structure initialized
+* Dashboard component architecture planned
+* Local development environment configured
+
+### Planned Features
+
+* Responsive dashboard layout
+* Navigation sidebar
+* Mission status and system health indicators
+* Camera feed panel
+* Interactive 3D map visualization
+* View switching between camera and map
+* Emergency controls and operator actions
+* Modern UI matching the provided design reference
+
+## Tech Stack
+
+### Frontend
+
+* React
+* Vite
+* JavaScript (ES6+)
+* CSS3
+
+### Visualization (Planned)
+
+* Three.js
+* React Three Fiber
+* PCDLoader
+
+### Robotics Integration (Optional / Bonus)
+
+* ROSLib.js
+* ROS2 Web Bridge
+
+## Project Structure
+
+```text
+src/
+│
+├── components/
+│   ├── Sidebar/
+│   ├── TopBar/
+│   ├── CameraView/
+│   ├── MapView/
+│   └── Controls/
+│
+├── pages/
+│   └── Dashboard/
+│
+├── assets/
+│
+├── styles/
+│
+├── App.jsx
+└── main.jsx
+```
+
+## Getting Started
+
+### Prerequisites
+
+* Node.js (v18 or higher recommended)
+* npm
+
+## Design Goals
+
+* Match the provided dashboard reference as closely as possible
+* Maintain a clean and modular codebase
+* Ensure responsive behavior across screen sizes
+* Keep components reusable and easy to extend
+* Support future ROS2 integration
+
+## Development Approach
+
+The project follows a component-driven architecture where each major dashboard section is developed as an independent and reusable React component. This approach improves maintainability, readability, and scalability.
+
+The implementation is divided into phases:
+
+1. Core dashboard layout
+2. Navigation and status components
+3. Camera feed integration
+4. 3D map visualization
+5. Interaction and control systems
+6. UI refinement and responsiveness
+
+## Future Enhancements
+
+* Live ROS2 integration
+* Real-time telemetry updates
+* Multiple camera feeds
+* Mission history and analytics
+* Advanced map controls
+* Point cloud streaming support
+
+## Assignment Information
+
+This project is being developed as part of the ERIC Robotics technical assessment assignment.
+
+## Author
+
+Vaibhavi Iratkar
